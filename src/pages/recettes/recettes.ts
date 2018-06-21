@@ -6,6 +6,7 @@ import { Recipe } from '../../interfaces/recipe'
 import { RecipeApiProvider } from "../../providers/recipe-api/recipe-api";
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-recettes',
@@ -32,15 +33,13 @@ export class RecettesPage {
   }
 
   Delete(item) {
-    var index = this.recettes.indexOf(item, 0);
-    if (index > -1) {
-      this.recettes.splice(index, 1);
-    }
     this.RecipeApiProvider.delete(item)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RecettesPage');
+    this.RecipeApiProvider
+      .getAll()
+      .then(recipes => (this.recettes = recipes));
   }
 
 }
@@ -49,15 +48,15 @@ export class RecettesPage {
 })
 export class ModalContentPage {
 
-  aliments: Ingredient[];
-
+  recipeAliments: Ingredient[];
 
   constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    private RecipeApiProvider: RecipeApiProvider
   ) {
-    this.aliments = [];
+    this.recipeAliments = [];
 
   }
 
@@ -74,16 +73,23 @@ export class ModalContentPage {
   }
 
   Delete(item) {
-    var index = this.aliments.indexOf(item, 0);
+    var index = this.recipeAliments.indexOf(item, 0);
     if (index > -1) {
-      this.aliments.splice(index, 1);
+      this.recipeAliments.splice(index, 1);
     }
   }
 
   Add(name, quantity, unit) {
     quantity = +quantity;
     let id = Math.random() + Math.random();
-    this.aliments.push({ id, name, quantity, unit });
-    console.log(this.aliments)
+    this.recipeAliments.push({ id, name, quantity, unit });
+  }
+
+  AddRecipe({ name, description }){
+    let id = Math.random() + Math.random();
+    let ingredients = this.recipeAliments;
+    // a faire avec la methode base64 pour up des images
+    let image = '';
+    this.RecipeApiProvider.add({ id, name, description,image, ingredients })
   }
 }
