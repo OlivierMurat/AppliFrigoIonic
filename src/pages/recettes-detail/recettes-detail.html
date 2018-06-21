@@ -21,8 +21,8 @@
       <ion-list>
         <ion-item-sliding *ngFor="let ingredient of recette.ingredients">
           <ion-item ion-item>
-            <h2>{{ ingredient.nom }}</h2>
-            <p>{{ ingredient.nb }}</p>
+            <h2>{{ ingredient.name }}</h2>
+            <p>{{ ingredient.quantity }}</p>
           </ion-item>
           <ion-item-options side="left">
             <button ion-button (click)="More(ingredient)" color="secondary">
@@ -43,18 +43,27 @@
 
         <ion-item>
           <ion-label fixed>Aliment</ion-label>
-          <ion-input type="text" [(ngModel)]="value1"></ion-input>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label fixed>Quantité</ion-label>
-          <ion-input type="number" [(ngModel)]="value2"></ion-input>
+          <ion-input type="number" [(ngModel)]="quantity"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Unité</ion-label>
+          <ion-select [(ngModel)]="unit">
+            <ion-option value="Kilo">Kilo</ion-option>
+            <ion-option value="Litre">Litre</ion-option>
+            <ion-option value="Pièce">Pièce</ion-option>
+          </ion-select>
         </ion-item>
 
       </ion-list>
 
       <div padding>
-        <button ion-button color="primary" block (click)="Add(value1,value2)">Ajouter</button>
+        <button ion-button color="primary" block (click)="Add(name,quantity,unit)">Ajouter</button>
       </div>
     </ion-card-content>
   </ion-card>

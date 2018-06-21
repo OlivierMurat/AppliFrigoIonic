@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Recipe } from '../../interfaces/recipe';
+import { Ingredient } from '../../interfaces/ingredient';
 
 @IonicPage()
 @Component({
@@ -8,30 +10,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RecettesDetailPage {
 
-  recette: { ingredients: any[] };
+  recette: Recipe[];
+  ingredient: Ingredient[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.recette = this.navParams.get("recette");
+    this.ingredient = this.navParams.get("recette").ingredients;
   }
 
   More(item) {
-    item.nb += 1;
+    item.quantity += 1;
   }
 
   Less(item) {
-    item.nb -= 1;
+    item.quantity -= 1;
   }
 
   Delete(item) {
-    var index = this.recette.ingredients.indexOf(item, 0);
+    var index = this.ingredient.indexOf(item, 0);
     if (index > -1) {
-      this.recette.ingredients.splice(index, 1);
+      this.ingredient.splice(index, 1);
     }
   }
 
-  Add(nom, nb) {
-    nb = +nb;
-    this.recette.ingredients.push({ nom, nb });
+  Add(name, quantity, unit) {
+    quantity = +quantity;
+    this.ingredient.push({ name, quantity, unit });
   }
 
   ionViewDidLoad() {
