@@ -31,6 +31,16 @@ export class RecipeApiProvider {
     this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
   }
 
+  // lessIngredient(recipe: Recipe) {
+  //   recipe.quantity -= 1;
+  //   this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
+  // }
+
+  // moreIngredient(recipe: Recipe) {
+  //   recipe.quantity += 1;
+  //   this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
+  // }
+
 
   delete(recipe: Recipe) {
     this.storage.remove(this.getKey(recipe));

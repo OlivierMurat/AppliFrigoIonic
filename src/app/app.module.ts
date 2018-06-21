@@ -16,6 +16,7 @@ import { ListePageModule } from '../pages/liste/liste.module';
 import { IngredientApiProvider } from '../providers/ingredient-api/ingredient-api';
 import { RecipeApiProvider } from '../providers/recipe-api/recipe-api';
 import { ListingApiProvider } from '../providers/listing-api/listing-api';
+import { ScheduleApiProvider } from '../providers/schedule-api/schedule-api';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ListingApiProvider } from '../providers/listing-api/listing-api';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     IngredientApiProvider,
     RecipeApiProvider,
-    ListingApiProvider
+    ListingApiProvider,
+    ScheduleApiProvider
   ]
 })
 export class AppModule { }

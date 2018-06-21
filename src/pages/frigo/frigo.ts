@@ -16,11 +16,11 @@ export class FrigoPage {
   }
 
   More(item) {
-    item.quantity += 1;
+    this.IngredientApiProvider.lessIngredient(item)
   }
 
   Less(item) {
-    item.quantity -= 1;
+    this.IngredientApiProvider.moreIngredient(item)
   }
 
   Delete(item) {
