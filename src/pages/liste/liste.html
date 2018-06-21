@@ -18,12 +18,15 @@
 
 <ion-content padding>
 
+  <!--
   <ion-item>
     <ion-label fixed>Nom de la liste</ion-label>
     <ion-input type="text" [(ngModel)]="name"></ion-input>
   </ion-item>
+  -->
+
   <div padding>
-<button ion-button color="primary" block (click)="presentAddModal(name)">Créer</button>
+    <button ion-button color="primary" block (click)="presentAddModal()">Créer une liste</button>
   </div>
 
   <ion-list>
