@@ -82,6 +82,7 @@ export class ModalContentPage {
 
   Add(name, quantity, unit) {
     quantity = +quantity;
+    let id = Math.random() + Math.random();
     this.aliments.push({ id, name, quantity, unit });
     console.log(this.aliments)
   }
