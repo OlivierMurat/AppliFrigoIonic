@@ -1,0 +1,29 @@
+<!--
+  Generated template for the RecettesDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{recette.nom}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img src="{{recette.image}}" />
+    <ion-card-content>
+      <ion-card-title>{{recette.description}}</ion-card-title>
+      <ion-list>
+        <ion-item ion-item *ngFor="let ingredient of recette.ingredients">
+          <h2>{{ ingredient.nom }}</h2>
+          <p>{{ ingredient.nb }}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

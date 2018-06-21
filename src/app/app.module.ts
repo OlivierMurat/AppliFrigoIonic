@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FrigoPageModule } from '../pages/frigo/frigo.module';
 import { RecettesPageModule } from '../pages/recettes/recettes.module';
+import { RecettesDetailPageModule } from '../pages/recettes-detail/recettes-detail.module';
 import { PlanificationPageModule } from '../pages/planification/planification.module';
 import { ListePageModule } from '../pages/liste/liste.module';
 
@@ -21,6 +22,7 @@ import { ListePageModule } from '../pages/liste/liste.module';
     IonicModule.forRoot(MyApp),
     FrigoPageModule,
     RecettesPageModule,
+    RecettesDetailPageModule,
     PlanificationPageModule,
     ListePageModule
   ],

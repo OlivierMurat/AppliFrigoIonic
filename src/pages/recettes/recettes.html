@@ -17,5 +17,16 @@
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item *ngFor="let recette of recettes">
+      <ion-thumbnail item-start>
+        <img src="{{recette.image}}">
+      </ion-thumbnail>
+      <h2>{{recette.nom}}</h2>
+      <p>{{recette.description}}</p>
+      <button ion-button clear item-end (click)="GoToDetail(recette)">Detail</button>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
