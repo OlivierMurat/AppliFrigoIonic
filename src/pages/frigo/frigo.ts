@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Ingredient } from '../../interfaces/ingredient'
 import { IngredientApiProvider } from "../../providers/ingredient-api/ingredient-api";
 
-/**
- * Generated class for the FrigoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-frigo',
@@ -20,7 +13,6 @@ export class FrigoPage {
   aliments: Ingredient[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private IngredientApiProvider: IngredientApiProvider) {
-    this.aliments = []
   }
 
   More(item) {
@@ -45,6 +37,8 @@ export class FrigoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FrigoPage');
+     this.IngredientApiProvider
+      .getAll()
+      .then(ingredients => (this.aliments = ingredients));
   }
 }
