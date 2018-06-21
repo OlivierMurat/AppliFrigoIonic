@@ -35,13 +35,11 @@ export class RecettesDetailPage {
       this.recette.ingredients.splice(index, 1);
     }
   }
-  /*
-    Add(nom, nb) {
-      nb = +nb;
-      this.recette.push({ nom, nb });
-      console.log(this.recette)
-    }
-  */
+
+  Add(nom, nb) {
+    nb = +nb;
+    this.recette.ingredients.push({ nom, nb });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecettesDetailPage');

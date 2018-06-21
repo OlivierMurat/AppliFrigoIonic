@@ -52,7 +52,6 @@ export class FrigoPage {
   Add(nom, nb) {
     nb = +nb;
     this.aliments.push({ nom, nb });
-    console.log(this.aliments)
   }
 
   ionViewDidLoad() {
