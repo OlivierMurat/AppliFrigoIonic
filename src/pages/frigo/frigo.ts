@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Ingredient } from '../../interfaces/ingredient'
+import { IngredientApiProvider } from "../../providers/ingredient-api/ingredient-api";
 
 /**
  * Generated class for the FrigoPage page.
@@ -18,24 +19,8 @@ export class FrigoPage {
 
   aliments: Ingredient[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.aliments = [
-      {
-        name: 'Salade',
-        quantity: 2,
-        unit: 'Pièce'
-      },
-      {
-        name: 'Tomate',
-        quantity: 5,
-        unit: 'Pièce'
-      },
-      {
-        name: 'Oignon',
-        quantity: 6,
-        unit: 'Pièce'
-      }
-    ]
+  constructor(public navCtrl: NavController, public navParams: NavParams, private IngredientApiProvider: IngredientApiProvider) {
+    this.aliments = []
   }
 
   More(item) {
@@ -55,7 +40,8 @@ export class FrigoPage {
 
   Add(name, quantity, unit) {
     quantity = +quantity;
-    this.aliments.push({ name, quantity, unit });
+    let id = Math.random() + Math.random()
+    this.IngredientApiProvider.add({ id, name, quantity, unit })
   }
 
   ionViewDidLoad() {

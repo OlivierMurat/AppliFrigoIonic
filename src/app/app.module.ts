@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -12,6 +13,7 @@ import { RecettesPageModule } from '../pages/recettes/recettes.module';
 import { RecettesDetailPageModule } from '../pages/recettes-detail/recettes-detail.module';
 import { PlanificationPageModule } from '../pages/planification/planification.module';
 import { ListePageModule } from '../pages/liste/liste.module';
+import { IngredientApiProvider } from '../providers/ingredient-api/ingredient-api';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { ListePageModule } from '../pages/liste/liste.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     MainMenuPageModule,
     FrigoPageModule,
     RecettesPageModule,
@@ -36,7 +39,8 @@ import { ListePageModule } from '../pages/liste/liste.module';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    IngredientApiProvider
   ]
 })
 export class AppModule { }

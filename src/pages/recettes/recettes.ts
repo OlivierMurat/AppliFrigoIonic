@@ -17,67 +17,67 @@ export class RecettesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.recettes = [
-      {
-        name: 'Salade de saison',
-        description: 'Une salade avec des artichaut',
-        image: '../../assets/imgs/salade.png',
-        ingredients: [
-          {
-            name: 'Salade',
-            quantity: 1,
-            unit: 'unité',
-          },
-          {
-            name: 'Artichaut',
-            quantity: 3,
-            unit: 'unité',
-          },
-          {
-            name: 'Crouton',
-            quantity: 12,
-            unit: 'unité'
-          }
-        ]
-      },
-      {
-        name: 'Pizza aux anchois',
-        description: 'Une pizza de la mer',
-        image: '../../assets/imgs/pizza.png',
-        ingredients: [
-          {
-            name: 'Tomate',
-            quantity: 3,
-            unit: 'unité'
-          },
-          {
-            name: 'Anchois',
-            quantity: 6,
-            unit: 'unité'
-          },
-          {
-            name: 'Fromage',
-            quantity: 2,
-            unit: 'unité'
-          }
-        ]
-      },
-      {
-        name: 'Tarte tatin',
-        description: 'Une tarte renversante',
-        image: '../../assets/imgs/tarte.png',
-        ingredients: [
-          {
-            name: 'Pate à tarte',
-            quantity: 1,
-            unit: 'unité'
-          },
-          {
-            name: 'Pomme',
-            quantity: 6,
-            unit: 'unité'
-          }
-        ]
-      }
+      // {
+      //   name: 'Salade de saison',
+      //   description: 'Une salade avec des artichaut',
+      //   image: '../../assets/imgs/salade.png',
+      //   ingredients: [
+      //     {
+      //       name: 'Salade',
+      //       quantity: 1,
+      //       unit: 'unité',
+      //     },
+      //     {
+      //       name: 'Artichaut',
+      //       quantity: 3,
+      //       unit: 'unité',
+      //     },
+      //     {
+      //       name: 'Crouton',
+      //       quantity: 12,
+      //       unit: 'unité'
+      //     }
+      //   ]
+      // },
+      // {
+      //   name: 'Pizza aux anchois',
+      //   description: 'Une pizza de la mer',
+      //   image: '../../assets/imgs/pizza.png',
+      //   ingredients: [
+      //     {
+      //       name: 'Tomate',
+      //       quantity: 3,
+      //       unit: 'unité'
+      //     },
+      //     {
+      //       name: 'Anchois',
+      //       quantity: 6,
+      //       unit: 'unité'
+      //     },
+      //     {
+      //       name: 'Fromage',
+      //       quantity: 2,
+      //       unit: 'unité'
+      //     }
+      //   ]
+      // },
+      // {
+      //   name: 'Tarte tatin',
+      //   description: 'Une tarte renversante',
+      //   image: '../../assets/imgs/tarte.png',
+      //   ingredients: [
+      //     {
+      //       name: 'Pate à tarte',
+      //       quantity: 1,
+      //       unit: 'unité'
+      //     },
+      //     {
+      //       name: 'Pomme',
+      //       quantity: 6,
+      //       unit: 'unité'
+      //     }
+      //   ]
+      // }
     ]
   }
 
