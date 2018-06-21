@@ -1,0 +1,64 @@
+<!--
+  Generated template for the FrigoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mon Frigo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Aliment</ion-label>
+      <ion-input type="text" [(ngModel)]="value1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Quantité</ion-label>
+      <ion-input type="number" [(ngModel)]="value2"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="Add(value1,value2)">Ajouter</button>
+  </div>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let aliment of aliments">
+
+      <ion-item>
+        <h2>{{aliment.nom}}</h2>
+        <p>{{aliment.nb}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button (click)="More(aliment)" color="secondary">
+          +
+        </button>
+        <button ion-button (click)="Less(aliment)" color="danger">
+          -
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button (click)="Delete(aliment)" color="danger">
+          Supprimer
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
