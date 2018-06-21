@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RecettesDetailPage {
 
-  recette: any[];
+  recette: { ingredients: any[] };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.recette = this.navParams.get("recette");
@@ -30,22 +30,18 @@ export class RecettesDetailPage {
   }
 
   Delete(item) {
-    //Ce que je veux faire ici, c'est supprimer l'ingredient envoyé avec "item",
-    //Il se trouve dans "ingrédient", qui lui meme se trouve dans "recette"
-    //J'accede a "recette" (qui contiens le nom, la description, et l'objet des ingredients ())
-    //Mais je n'arrive pas a accedes a ingredients (genre avec "this.recette[3]")
-    var index = this.recette[3].indexOf(item, 0);
+    var index = this.recette.ingredients.indexOf(item, 0);
     if (index > -1) {
-      this.recette[3].splice(index, 1);
+      this.recette.ingredients.splice(index, 1);
     }
   }
-
-  Add(nom, nb) {
-    nb = +nb;
-    this.recette.push({ nom, nb });
-    console.log(this.recette)
-  }
-
+  /*
+    Add(nom, nb) {
+      nb = +nb;
+      this.recette.push({ nom, nb });
+      console.log(this.recette)
+    }
+  */
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecettesDetailPage');
