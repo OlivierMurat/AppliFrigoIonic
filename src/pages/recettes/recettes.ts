@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RecettesDetailPage } from '../recettes-detail/recettes-detail';
+import { Ingredient } from '../../interfaces/ingredient'
+import { Recipe } from '../../interfaces/recipe'
 
-/**
- * Generated class for the RecettesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,61 +12,69 @@ import { RecettesDetailPage } from '../recettes-detail/recettes-detail';
 })
 export class RecettesPage {
 
-  recettes: any[];
-  ingredients: any[];
+  recettes: Recipe[];
+  ingredients: Ingredient[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.recettes = [
       {
-        nom: 'Salade de saison',
+        name: 'Salade de saison',
         description: 'Une salade avec des artichaut',
         image: '../../assets/imgs/salade.png',
         ingredients: [
           {
-            nom: 'Salade',
-            nb: 1
+            name: 'Salade',
+            quantity: 1,
+            unit: 'unité',
           },
           {
-            nom: 'Artichaut',
-            nb: 3
+            name: 'Artichaut',
+            quantity: 3,
+            unit: 'unité',
           },
           {
-            nom: 'Crouton',
-            nb: 12
+            name: 'Crouton',
+            quantity: 12,
+            unit: 'unité'
           }
         ]
       },
       {
-        nom: 'Pizza aux anchois',
+        name: 'Pizza aux anchois',
         description: 'Une pizza de la mer',
         image: '../../assets/imgs/pizza.png',
         ingredients: [
           {
-            nom: 'Tomate',
-            nb: 3
+            name: 'Tomate',
+            quantity: 3,
+            unit: 'unité'
           },
           {
-            nom: 'Anchois',
-            nb: 6
+            name: 'Anchois',
+            quantity: 6,
+            unit: 'unité'
           },
           {
-            nom: 'Fromage',
-            nb: 2
+            name: 'Fromage',
+            quantity: 2,
+            unit: 'unité'
           }
         ]
       },
       {
-        nom: 'Tarte tatin',
+        name: 'Tarte tatin',
         description: 'Une tarte renversante',
         image: '../../assets/imgs/tarte.png',
         ingredients: [
           {
-            nom: 'Pate à tarte',
-            nb: 1
+            name: 'Pate à tarte',
+            quantity: 1,
+            unit: 'unité'
           },
           {
-            nom: 'Pomme',
-            nb: 6
+            name: 'Pomme',
+            quantity: 6,
+            unit: 'unité'
           }
         ]
       }
