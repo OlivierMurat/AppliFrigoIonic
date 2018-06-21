@@ -22,9 +22,9 @@ export class ListePage {
     this.ListingApiProvider.delete(item);
   }
 
-  AddListe(name, quantity, unit) {
+  AddListe(name) {
     let id = Math.random() + Math.random();
-    this.ListingApiProvider.add({ id, name, quantity, unit });
+    this.ListingApiProvider.add({ id, name, ingredients });
   }
 
   ionViewDidLoad() {
