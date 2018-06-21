@@ -34,7 +34,7 @@ export class FrigoPage {
   }
 
   ionViewDidLoad() {
-     this.IngredientApiProvider
+    this.IngredientApiProvider
       .getAll()
       .then(ingredients => (this.aliments = ingredients));
   }
