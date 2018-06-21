@@ -30,7 +30,8 @@ export class IngredientApiProvider {
   add(ingredient: Ingredient) {
     this.storage.set(this.getKey(ingredient), JSON.stringify(ingredient));
   }
-  
+
+  editQuantity() { }
 
   delete(ingredient: Ingredient) {
     this.storage.remove(this.getKey(ingredient));

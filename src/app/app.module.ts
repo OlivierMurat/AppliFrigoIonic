@@ -15,6 +15,7 @@ import { PlanificationPageModule } from '../pages/planification/planification.mo
 import { ListePageModule } from '../pages/liste/liste.module';
 import { IngredientApiProvider } from '../providers/ingredient-api/ingredient-api';
 import { RecipeApiProvider } from '../providers/recipe-api/recipe-api';
+import { ListingApiProvider } from '../providers/listing-api/listing-api';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RecipeApiProvider } from '../providers/recipe-api/recipe-api';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     IngredientApiProvider,
-    RecipeApiProvider
+    RecipeApiProvider,
+    ListingApiProvider
   ]
 })
 export class AppModule { }
