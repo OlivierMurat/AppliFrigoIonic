@@ -14,6 +14,7 @@ import { RecettesDetailPageModule } from '../pages/recettes-detail/recettes-deta
 import { PlanificationPageModule } from '../pages/planification/planification.module';
 import { ListePageModule } from '../pages/liste/liste.module';
 import { IngredientApiProvider } from '../providers/ingredient-api/ingredient-api';
+import { RecipeApiProvider } from '../providers/recipe-api/recipe-api';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { IngredientApiProvider } from '../providers/ingredient-api/ingredient-ap
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    IngredientApiProvider
+    IngredientApiProvider,
+    RecipeApiProvider
   ]
 })
 export class AppModule { }

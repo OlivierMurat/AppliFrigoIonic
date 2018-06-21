@@ -24,10 +24,7 @@ export class FrigoPage {
   }
 
   Delete(item) {
-    var index = this.aliments.indexOf(item, 0);
-    if (index > -1) {
-      this.aliments.splice(index, 1);
-    }
+    this.IngredientApiProvider.delete(item)
   }
 
   Add(name, quantity, unit) {
