@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { MainMenuPageModule } from '../pages/main-menu/main-menu.module';
 import { FrigoPageModule } from '../pages/frigo/frigo.module';
 import { RecettesPageModule } from '../pages/recettes/recettes.module';
+import { RecettesDetailPageModule } from '../pages/recettes-detail/recettes-detail.module';
 import { PlanificationPageModule } from '../pages/planification/planification.module';
 import { ListePageModule } from '../pages/liste/liste.module';
 
@@ -23,6 +24,7 @@ import { ListePageModule } from '../pages/liste/liste.module';
     MainMenuPageModule,
     FrigoPageModule,
     RecettesPageModule,
+    RecettesDetailPageModule,
     PlanificationPageModule,
     ListePageModule
   ],
