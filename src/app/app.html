@@ -12,8 +12,14 @@
       </button>
     </ion-list>
   </ion-content>
-
+  <ion-footer padding>
+<button full menuClose ion-button icon-only (click)="goHome()">
+      <ion-icon name="home"></ion-icon>
+    </button>
+<button full menuClose ion-button icon-only color="danger" (click)="exitApp()">
+      <ion-icon name="power"></ion-icon>
+    </button>
+  </ion-footer>
 </ion-menu>
 
-<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content></ion-nav>

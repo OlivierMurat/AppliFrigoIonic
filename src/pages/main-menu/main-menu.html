@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Menu</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="menu-list">
+    <ion-row align-items-center>
+      <ion-item *ngFor="let p of pages" text-center col-6 class="button animated bounceInUp" [ngStyle]="{ 'background-color' : p.color }"
+      on-tap="openPage(p.component)">
+        <ion-icon color="light" name="{{p.icon}}"></ion-icon>
+        <p class="bold">{{ p.title }}</p>
+      </ion-item>
+    </ion-row>
+  </ion-list>
+</ion-content>

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MainMenuPageModule } from '../pages/main-menu/main-menu.module';
 import { FrigoPageModule } from '../pages/frigo/frigo.module';
 import { RecettesPageModule } from '../pages/recettes/recettes.module';
 import { PlanificationPageModule } from '../pages/planification/planification.module';
@@ -19,6 +20,7 @@ import { ListePageModule } from '../pages/liste/liste.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    MainMenuPageModule,
     FrigoPageModule,
     RecettesPageModule,
     PlanificationPageModule,
