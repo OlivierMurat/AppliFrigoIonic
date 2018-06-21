@@ -35,7 +35,8 @@ export class RecettesDetailPage {
 
   Add(name, quantity, unit) {
     quantity = +quantity;
-    this.ingredient.push({ name, quantity, unit });
+    let id = Math.random() + Math.random()
+    this.ingredient.push({ id, name, quantity, unit });
   }
 
   ionViewDidLoad() {
