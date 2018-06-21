@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from "@ionic/storage";
 import { Recipe } from "../../interfaces/recipe";
+import { Ingredient } from "../../interfaces/ingredient";
 
 const RECIPE_KEY = "recipe_";
 
@@ -40,6 +41,11 @@ export class RecipeApiProvider {
   //   recipe.quantity += 1;
   //   this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
   // }
+
+  addIngredient(recipe: Recipe, ingredient: Ingredient) {
+    recipe.ingredients.push(ingredient);
+    this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
+  }
 
 
   delete(recipe: Recipe) {
