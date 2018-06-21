@@ -81,6 +81,13 @@ export class RecettesPage {
     this.navCtrl.push(RecettesDetailPage, { recette: recette });
   }
 
+  Delete(item) {
+    var index = this.recettes.indexOf(item, 0);
+    if (index > -1) {
+      this.recettes.splice(index, 1);
+    }
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecettesPage');
   }

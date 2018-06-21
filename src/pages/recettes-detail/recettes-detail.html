@@ -19,11 +19,43 @@
     <ion-card-content>
       <ion-card-title>{{recette.description}}</ion-card-title>
       <ion-list>
-        <ion-item ion-item *ngFor="let ingredient of recette.ingredients">
-          <h2>{{ ingredient.nom }}</h2>
-          <p>{{ ingredient.nb }}</p>
-        </ion-item>
+        <ion-item-sliding *ngFor="let ingredient of recette.ingredients">
+          <ion-item ion-item>
+            <h2>{{ ingredient.nom }}</h2>
+            <p>{{ ingredient.nb }}</p>
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button (click)="More(ingredient)" color="secondary">
+              +
+            </button>
+            <button ion-button (click)="Less(ingredient)" color="danger">
+              -
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button ion-button (click)="Delete(recette.ingredients, ingredient)" color="danger">
+              Supprimer
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
       </ion-list>
+      <ion-list>
+
+        <ion-item>
+          <ion-label fixed>Aliment</ion-label>
+          <ion-input type="text" [(ngModel)]="value1"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Quantité</ion-label>
+          <ion-input type="number" [(ngModel)]="value2"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="primary" block (click)="Add(value1,value2)">Ajouter</button>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
