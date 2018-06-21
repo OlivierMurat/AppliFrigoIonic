@@ -18,34 +18,41 @@
 
 <ion-content padding>
 
-  <!--
-  <ion-item>
-    <ion-label fixed>Nom de la liste</ion-label>
-    <ion-input type="text" [(ngModel)]="name"></ion-input>
-  </ion-item>
-  -->
-
   <div padding>
     <button ion-button color="primary" block (click)="presentAddModal()">Créer une liste</button>
   </div>
 
   <ion-list>
 
-    <ion-item-sliding *ngFor="let liste of listes">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="../../assets/imgs/liste.png">
-        </ion-thumbnail>
-        <h2>{{liste.name}}</h2>
-        <p>{{liste.description}}</p>
-        <button ion-button clear item-end (click)="GoToDetail(liste)">Detail</button>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button (click)="Delete(liste)" color="danger">
-          Supprimer
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
+    <ion-item *ngFor="let liste of listes">
+
+      <h2>{{liste.name}}</h2>
+
+      <ion-item-sliding *ngFor="let aliment of aliments">
+
+        <ion-item>
+          <h2>{{aliment.name}}</h2>
+          <p>{{aliment.quantity}} {{ aliment.unit }}</p>
+        </ion-item>
+
+        <ion-item-options side="left">
+          <button ion-button (click)="More(aliment)" color="secondary">
+            +
+          </button>
+          <button ion-button (click)="Less(aliment)" color="danger">
+            -
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button (click)="Delete(aliment)" color="danger">
+            Supprimer
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+
+    </ion-item>
 
   </ion-list>
+
 </ion-content>

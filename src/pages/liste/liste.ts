@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController, P
 import { ListeDetailPage } from '../liste-detail/liste-detail';
 import { ListingApiProvider } from "../../providers/listing-api/listing-api";
 import { Ingredient } from '../../interfaces/ingredient';
+import { Listing } from '../../interfaces/listing';
 
 @IonicPage()
 @Component({
@@ -11,7 +12,7 @@ import { Ingredient } from '../../interfaces/ingredient';
 })
 export class ListePage {
 
-
+  liste: Listing[];
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private ListingApiProvider: ListingApiProvider) {
   }
 
@@ -29,12 +30,15 @@ export class ListePage {
   }
 
   AddListe(name, ingredients) {
+    console.log(name, ingredients);
     let id = Math.random() + Math.random();
     this.ListingApiProvider.add({ id, name, ingredients });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RecettesPage');
+    this.ListingApiProvider
+      .getAll()
+      .then(liste => (this.liste = liste));
   }
 
 }
