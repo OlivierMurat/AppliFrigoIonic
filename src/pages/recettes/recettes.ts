@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController, P
 import { RecettesDetailPage } from '../recettes-detail/recettes-detail';
 import { Ingredient } from '../../interfaces/ingredient'
 import { Recipe } from '../../interfaces/recipe'
+import { RecipeApiProvider } from "../../providers/recipe-api/recipe-api";
 
 
 @IonicPage()
@@ -15,7 +16,7 @@ export class RecettesPage {
   recettes: Recipe[];
   ingredients: Ingredient[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private RecipeApiProvider: RecipeApiProvider) {
     this.recettes = [
 
     ]
@@ -35,6 +36,7 @@ export class RecettesPage {
     if (index > -1) {
       this.recettes.splice(index, 1);
     }
+    this.RecipeApiProvider.delete(item)
   }
 
   ionViewDidLoad() {

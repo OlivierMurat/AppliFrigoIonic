@@ -18,4 +18,31 @@
 
 <ion-content padding>
 
+  <ion-item>
+    <ion-label fixed>Nom de la liste</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <div padding>
+    <button ion-button color="primary" block (click)="AddListe(name)">Créer</button>
+  </div>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let liste of listes">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="../../assets/imgs/liste.png">
+        </ion-thumbnail>
+        <h2>{{liste.name}}</h2>
+        <p>{{liste.description}}</p>
+        <button ion-button clear item-end (click)="GoToDetail(liste)">Detail</button>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="Delete(liste)" color="danger">
+          Supprimer
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
 </ion-content>
