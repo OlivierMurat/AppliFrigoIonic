@@ -48,7 +48,8 @@ export class ModalListContentPage {
   constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    private ListingApiProvider: ListingApiProvider
   ) {
     this.aliments = [];
   }
@@ -74,7 +75,12 @@ export class ModalListContentPage {
 
   Add(name, quantity, unit) {
     quantity = +quantity;
+    let id = Math.random() + Math.random()
     this.aliments.push({ id, name, quantity, unit });
-    console.log(this.aliments)
+  }
+
+  AddListe(name, ingredients) {
+    let id = Math.random() + Math.random();
+    this.ListingApiProvider.add({ id, name, ingredients });
   }
 }

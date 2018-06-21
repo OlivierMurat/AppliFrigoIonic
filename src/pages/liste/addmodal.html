@@ -55,20 +55,20 @@
     <ion-item-sliding *ngFor="let aliment of aliments">
 
       <ion-item>
-        <h2>{{aliments.name}}</h2>
-        <p>{{aliments.quantity}} {{ aliments.unit }}</p>
+        <h2>{{aliment.name}}</h2>
+        <p>{{aliment.quantity}} {{ aliment.unit }}</p>
       </ion-item>
 
       <ion-item-options side="left">
-        <button ion-button (click)="More(aliments)" color="secondary">
+        <button ion-button (click)="More(aliment)" color="secondary">
           +
         </button>
-        <button ion-button (click)="Less(aliments)" color="danger">
+        <button ion-button (click)="Less(aliment)" color="danger">
           -
         </button>
       </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button (click)="Delete(aliments)" color="danger">
+        <button ion-button (click)="Delete(aliment)" color="danger">
           Supprimer
         </button>
       </ion-item-options>
