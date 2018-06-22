@@ -31,9 +31,9 @@ export class ListePage {
     this.ListingApiProvider.moreIngredient(liste, index);
   }
 
-  Less(item) {
-    let index = this.liste.ingredients.indexOf(item)
-    this.ListingApiProvider.lessIngredient(this.liste, index);
+  Less(liste, item) {
+    let index = liste.ingredients.indexOf(item)
+    this.ListingApiProvider.lessIngredient(liste, index);
   }
 
   Delete(item) {

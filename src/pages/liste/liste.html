@@ -47,15 +47,15 @@
           <p>{{ingredient.quantity}} {{ ingredient.unit }}</p>
         </ion-item>
         <ion-item-options side="left">
-          <button ion-button (click)="More(ingredient)" color="secondary">
+          <button ion-button (click)="More(liste, ingredient)" color="secondary">
             +
           </button>
-          <button ion-button (click)="Less(ingredient)" color="danger">
+          <button ion-button (click)="Less(liste, ingredient)" color="danger">
             -
           </button>
         </ion-item-options>
         <ion-item-options side="right">
-          <button ion-button (click)="Delete(liste, ingredient)" color="danger">
+          <button ion-button (click)="Delete(ingredient)" color="danger">
             Supprimer
           </button>
         </ion-item-options>
