@@ -8,7 +8,6 @@ const INGREDIENT_KEY = "ingredient_";
 export class IngredientApiProvider {
 
   constructor(private storage: Storage) {
-    console.log('Hello IngredientApiProvider Provider');
   }
 
   getAll(): Promise<Ingredient[]> {

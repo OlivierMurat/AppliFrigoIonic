@@ -18,8 +18,5 @@ export class PlanificationPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PlanificationPage');
-  }
 
 }

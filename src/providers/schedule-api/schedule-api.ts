@@ -8,7 +8,6 @@ const LISTING_KEY = "listing_";
 export class ScheduleApiProvider {
 
   constructor(private storage: Storage) {
-    console.log('Hello ScheduleApiProvider Provider');
   }
 
   getAll(): Promise<Schedule[]> {
