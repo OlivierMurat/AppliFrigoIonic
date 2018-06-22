@@ -37,6 +37,10 @@ export class ListingApiProvider {
     this.storage.remove(this.getKey(listing));
   }
 
+  deleteListe(listing: Listing) {
+    this.storage.remove(this.getKey(listing));
+  }
+
   getKey(listing: Listing) {
     return LISTING_KEY + listing.id.toString();
   }

@@ -13,6 +13,7 @@ import { Listing } from '../../interfaces/listing';
 export class ListePage {
 
   listes: Listing[];
+
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private ListingApiProvider: ListingApiProvider) {
   }
 
@@ -27,6 +28,10 @@ export class ListePage {
 
   Delete(item) {
     this.ListingApiProvider.delete(item);
+  }
+
+  DeleteListe(item) {
+    this.ListingApiProvider.deleteListe(item);
   }
 
   ionViewWillEnter() {
@@ -80,6 +85,5 @@ export class ModalListContentPage {
   AddListe(name, ingredients) {
     let id = Math.random() + Math.random();
     this.ListingApiProvider.add({ id, name, ingredients });
-    this.dismiss;
   }
 }

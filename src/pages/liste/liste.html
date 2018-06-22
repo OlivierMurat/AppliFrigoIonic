@@ -24,34 +24,44 @@
 
   <ion-list>
 
-    <ion-item *ngFor="let liste of listes">
+    <ion-card *ngFor="let liste of listes">
 
-      <h2>{{liste.name}}</h2>
-      <!--
-      <ion-item-sliding *ngFor="let aliment of aliments">
+      <ion-item-sliding>
 
         <ion-item>
-          <h2>{{aliment.name}}</h2>
-          <p>{{aliment.quantity}} {{ aliment.unit }}</p>
+          <ion-thumbnail item-start>
+            <img src="../../assets/imgs/liste.png">
+          </ion-thumbnail>
+          <h1>{{liste.name}}</h1>
         </ion-item>
+        <ion-item-options side="right">
+          <button ion-button (click)="DeleteListe(liste)" color="danger">
+            Supprimer
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
 
+      <ion-item-sliding *ngFor="let ingredient of liste.ingredients">
+        <ion-item>
+          <h3>{{ingredient.name}}</h3>
+          <p>{{ingredient.quantity}} {{ ingredient.unit }}</p>
+        </ion-item>
         <ion-item-options side="left">
-          <button ion-button (click)="More(aliment)" color="secondary">
+          <button ion-button (click)="More(ingredient)" color="secondary">
             +
           </button>
-          <button ion-button (click)="Less(aliment)" color="danger">
+          <button ion-button (click)="Less(ingredient)" color="danger">
             -
           </button>
         </ion-item-options>
         <ion-item-options side="right">
-          <button ion-button (click)="Delete(aliment)" color="danger">
+          <button ion-button (click)="Delete(ingredient)" color="danger">
             Supprimer
           </button>
         </ion-item-options>
-
       </ion-item-sliding>
-      -->
-    </ion-item>
+
+    </ion-card>
 
   </ion-list>
 
