@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{recette.nom}}</ion-title>
+    <ion-title>{{ recette.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,11 +15,11 @@
 
 <ion-content padding>
   <ion-card>
-    <img src="{{recette.image}}" />
+    <img src="{{ recette.image }}" />
     <ion-card-content>
-      <ion-card-title>{{recette.description}}</ion-card-title>
+      <ion-card-title>{{ recette.description }}</ion-card-title>
       <ion-list>
-        <ion-item-sliding *ngFor="let ingredient of recette.ingredients">
+        <ion-item-sliding *ngFor="let ingredient of ingredients">
           <ion-item ion-item>
             <h2>{{ ingredient.name }}</h2>
             <p>{{ ingredient.quantity }}</p>

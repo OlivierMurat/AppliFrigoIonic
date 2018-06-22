@@ -13,11 +13,12 @@ import { RecipeApiProvider } from "../../providers/recipe-api/recipe-api";
 export class RecettesDetailPage {
 
   recette: Recipe;
-  ingredient: Ingredient[];
+  ingredients: Ingredient[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private RecipeApiProvider: RecipeApiProvider) {
     this.recette = this.navParams.get("recette");
-    this.ingredient = this.navParams.get("recette").ingredients;
+    this.ingredients = this.navParams.get("recette").ingredients;
+    console.log(this.recette)
   }
 
   More(item) {
@@ -31,9 +32,9 @@ export class RecettesDetailPage {
   }
 
   Delete(item) {
-    var index = this.ingredient.indexOf(item, 0);
+    var index = this.ingredients.indexOf(item, 0);
     if (index > -1) {
-      this.ingredient.splice(index, 1);
+      this.ingredients.splice(index, 1);
     }
   }
 

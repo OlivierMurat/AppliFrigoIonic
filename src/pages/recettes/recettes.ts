@@ -27,7 +27,7 @@ export class RecettesPage {
     this.navCtrl.push(RecettesDetailPage, { recette: recette });
   }
 
-  presentAddModal(){
+  presentAddModal() {
     const modal = this.modalCtrl.create(ModalContentPage);
     modal.present();
   }
@@ -48,7 +48,7 @@ export class RecettesPage {
 })
 export class ModalContentPage {
 
-  recipeAliments: Ingredient[];
+  aliments: Ingredient[];
 
   constructor(
     public platform: Platform,
@@ -56,7 +56,7 @@ export class ModalContentPage {
     public viewCtrl: ViewController,
     private RecipeApiProvider: RecipeApiProvider
   ) {
-    this.recipeAliments = [];
+    this.aliments = [];
 
   }
 
@@ -73,24 +73,24 @@ export class ModalContentPage {
   }
 
   Delete(item) {
-    var index = this.recipeAliments.indexOf(item, 0);
+    var index = this.aliments.indexOf(item, 0);
     if (index > -1) {
-      this.recipeAliments.splice(index, 1);
+      this.aliments.splice(index, 1);
     }
   }
 
   Add(name, quantity, unit) {
     quantity = +quantity;
     let id = Math.random() + Math.random();
-    this.recipeAliments.push({ id, name, quantity, unit });
+    this.aliments.push({ id, name, quantity, unit });
   }
 
-  AddRecipe({ name, description }){
+  AddRecipe({ name, description, ingredients }) {
     let id = Math.random() + Math.random();
-    let ingredients = this.recipeAliments;
+    //let ingredients = this.aliments;
     // a faire avec la methode base64 pour up des images
     let image = '';
-    this.RecipeApiProvider.add({ id, name, description,image, ingredients })
+    this.RecipeApiProvider.add({ id, name, description, image, ingredients })
     this.viewCtrl.dismiss();
   }
 }

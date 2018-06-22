@@ -17,18 +17,8 @@
   <ion-list>
 
     <ion-item>
-      <ion-label fixed>Nom</ion-label>
-      <ion-input type="text" [(ngModel)]="listName"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>Desctiption</ion-label>
-      <ion-input type="text" [(ngModel)]="listDescription"></ion-input>
-    </ion-item>
-
-    <ion-item>
       <ion-label fixed>Aliment</ion-label>
-      <ion-input type="text" [(ngModel)]="name"></ion-input>
+      <ion-input type="text" [(ngModel)]="nameAlim"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -48,11 +38,25 @@
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" block (click)="Add(name,quantity,unit)">Ajouter Ingrédient</button>
+    <button ion-button color="primary" block (click)="Add(nameAlim,quantity,unit)">Ajouter Ingrédient</button>
   </div>
 
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Desctiption</ion-label>
+      <ion-input type="text" [(ngModel)]="description"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
   <div padding>
-<button ion-button color="primary" block (click)="Add(id, name, description, ingredients )">Valider la recette</button>
+    <button ion-button color="primary" block (click)="AddRecipe(name, description, aliments )">Valider la recette</button>
   </div>
 
   <ion-list>
@@ -60,20 +64,20 @@
     <ion-item-sliding *ngFor="let aliment of aliments">
 
       <ion-item>
-        <h2>{{aliments.name}}</h2>
-        <p>{{aliments.quantity}} {{ aliments.unit }}</p>
+        <h2>{{ aliment.name }}</h2>
+        <p>{{ aliment.quantity }} {{ aliment.unit }}</p>
       </ion-item>
 
       <ion-item-options side="left">
-        <button ion-button (click)="More(aliments)" color="secondary">
+        <button ion-button (click)="More(aliment)" color="secondary">
           +
         </button>
-        <button ion-button (click)="Less(aliments)" color="danger">
+        <button ion-button (click)="Less(aliment)" color="danger">
           -
         </button>
       </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button (click)="Delete(aliments)" color="danger">
+        <button ion-button (click)="Delete(aliment)" color="danger">
           Supprimer
         </button>
       </ion-item-options>

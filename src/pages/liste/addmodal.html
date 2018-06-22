@@ -17,11 +17,6 @@
   <ion-list>
 
     <ion-item>
-      <ion-label fixed>Nom de la liste</ion-label>
-      <ion-input type="text" [(ngModel)]="listName"></ion-input>
-    </ion-item>
-
-    <ion-item>
       <ion-label fixed>Aliment</ion-label>
       <ion-input type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
@@ -45,6 +40,11 @@
   <div padding>
     <button ion-button color="primary" block (click)="Add(name,quantity,unit)">Ajouter un ingrédient</button>
   </div>
+
+  <ion-item>
+    <ion-label fixed>Nom de la liste</ion-label>
+    <ion-input type="text" [(ngModel)]="listName"></ion-input>
+  </ion-item>
 
   <div padding>
     <button ion-button color="primary" block (click)="AddListe(listName, aliments)">Valider la liste</button>

@@ -19,7 +19,7 @@
 <ion-content padding>
 
   <div padding>
-<button ion-button color="primary" block (click)="presentAddModal()">Nouvelle recette</button>
+    <button ion-button color="primary" block (click)="presentAddModal()">Nouvelle recette</button>
   </div>
 
   <ion-list>
@@ -27,10 +27,10 @@
     <ion-item-sliding *ngFor="let recette of recettes">
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="{{recette.image}}">
+          <img src="{{ recette.image }}">
         </ion-thumbnail>
-        <h2>{{recette.name}}</h2>
-        <p>{{recette.description}}</p>
+        <h2>{{ recette.name }}</h2>
+        <p>{{ recette.description }}</p>
         <button ion-button clear item-end (click)="GoToDetail(recette)">Detail</button>
       </ion-item>
       <ion-item-options side="right">
