@@ -90,6 +90,7 @@ export class ModalContentPage {
     //let ingredients = this.aliments;
     // a faire avec la methode base64 pour up des images
     let image = '';
+    console.log(id, name, description, image, ingredients);
     this.RecipeApiProvider.add({ id, name, description, image, ingredients })
     this.viewCtrl.dismiss();
   }

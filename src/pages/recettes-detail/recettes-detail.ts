@@ -18,7 +18,6 @@ export class RecettesDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private RecipeApiProvider: RecipeApiProvider) {
     this.recette = this.navParams.get("recette");
     this.ingredients = this.navParams.get("recette").ingredients;
-    console.log(this.recette)
   }
 
   More(item) {
