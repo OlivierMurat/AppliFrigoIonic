@@ -9,7 +9,6 @@ const RECIPE_KEY = "recipe_";
 export class RecipeApiProvider {
 
   constructor(private storage: Storage) {
-    console.log('Hello RecipeApiProvider Provider');
   }
 
   getAll(): Promise<Recipe[]> {

@@ -24,10 +24,6 @@ export class MainMenuPage {
     this.pages = Pages
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MainMenuPage');
-  }
-
   openPage(page) {
     this.navCtrl.push(page)
   }

@@ -43,8 +43,5 @@ export class RecettesDetailPage {
     this.RecipeApiProvider.addIngredient(this.recette, { id, name, quantity, unit });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RecettesDetailPage');
-  }
 
 }
