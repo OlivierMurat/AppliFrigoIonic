@@ -12,7 +12,8 @@ import { Listing } from '../../interfaces/listing';
 })
 export class ListePage {
 
-  liste: Listing[];
+  listes: Listing[];
+
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private ListingApiProvider: ListingApiProvider) {
   }
 
@@ -29,16 +30,10 @@ export class ListePage {
     this.ListingApiProvider.delete(item);
   }
 
-  AddListe(name, ingredients) {
-    console.log(name, ingredients);
-    let id = Math.random() + Math.random();
-    this.ListingApiProvider.add({ id, name, ingredients });
-  }
-
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.ListingApiProvider
       .getAll()
-      .then(liste => (this.liste = liste));
+      .then(liste => (this.listes = liste));
   }
 
 }
@@ -86,5 +81,6 @@ export class ModalListContentPage {
   AddListe(name, ingredients) {
     let id = Math.random() + Math.random();
     this.ListingApiProvider.add({ id, name, ingredients });
+    this.dismiss;
   }
 }

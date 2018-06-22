@@ -36,7 +36,7 @@ export class RecettesPage {
     this.RecipeApiProvider.delete(item)
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.RecipeApiProvider
       .getAll()
       .then(recipes => (this.recettes = recipes));
@@ -91,5 +91,6 @@ export class ModalContentPage {
     // a faire avec la methode base64 pour up des images
     let image = '';
     this.RecipeApiProvider.add({ id, name, description,image, ingredients })
+    this.viewCtrl.dismiss();
   }
 }
