@@ -13,7 +13,6 @@ import { Listing } from '../../interfaces/listing';
 export class ListePage {
 
   listes: Listing[];
-
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private ListingApiProvider: ListingApiProvider) {
   }
 
