@@ -12,7 +12,7 @@ import { Listing } from '../../interfaces/listing';
 })
 export class ListePage {
 
-  liste: Listing[];
+  listes: Listing[];
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, private ListingApiProvider: ListingApiProvider) {
   }
 
@@ -38,7 +38,7 @@ export class ListePage {
   ionViewDidLoad() {
     this.ListingApiProvider
       .getAll()
-      .then(liste => (this.liste = liste));
+      .then(liste => (this.listes = liste));
   }
 
 }
