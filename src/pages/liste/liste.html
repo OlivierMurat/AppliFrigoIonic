@@ -20,6 +20,12 @@
 
     <ion-card *ngFor="let liste of listes">
 
+      <ion-item>
+        <p style="text-align: center">
+          <i>&larr; supprimer</i>
+        </p>
+      </ion-item>
+
       <ion-item-sliding>
 
         <ion-item>
@@ -34,6 +40,12 @@
           </button>
         </ion-item-options>
       </ion-item-sliding>
+
+      <ion-item>
+        <p style="text-align: center">
+          <i>&larr; supprimer - modifier &rarr;</i>
+        </p>
+      </ion-item>
 
       <ion-item-sliding *ngFor="let ingredient of liste.ingredients">
         <ion-item>
