@@ -26,6 +26,16 @@ export class ListePage {
     modal.present();
   }
 
+  More(liste, item) {
+    let index = liste.ingredients.indexOf(item)
+    this.ListingApiProvider.moreIngredient(liste, index);
+  }
+
+  Less(item) {
+    let index = this.liste.ingredients.indexOf(item)
+    this.ListingApiProvider.lessIngredient(this.liste, index);
+  }
+
   Delete(item) {
     this.ListingApiProvider.delete(item);
   }

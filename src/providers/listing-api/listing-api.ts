@@ -31,7 +31,15 @@ export class ListingApiProvider {
     this.storage.set(this.getKey(listing), JSON.stringify(listing));
   }
 
-  editQuantity() { }
+  lessIngredient(listing: Listing, index) {
+    listing.ingredients[index].quantity -= 1;
+    this.storage.set(this.getKey(listing), JSON.stringify(listing));
+  }
+
+  moreIngredient(listing: Listing, index) {
+    listing.ingredients[index].quantity += 1;
+    this.storage.set(this.getKey(listing), JSON.stringify(listing));
+  }
 
   delete(listing: Listing) {
     this.storage.remove(this.getKey(listing));
