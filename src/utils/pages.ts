@@ -7,7 +7,7 @@ const Pages = [
   { title: 'Frigo', component: FrigoPage, icon: "snow", color: "#E47500" },
   { title: 'Recettes', component: RecettesPage, icon: "pizza", color: "#5AD863" },
   { title: 'Planification', component: PlanificationPage, icon: "calendar", color: "#F8E548" },
-  { title: 'Liste', component: ListePage, icon: "list-box", color: "#AD5CE9" }
+  { title: 'Listes', component: ListePage, icon: "list-box", color: "#AD5CE9" }
 ];
 
 export default Pages;

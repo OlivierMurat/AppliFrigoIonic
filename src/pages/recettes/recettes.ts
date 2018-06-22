@@ -29,11 +29,19 @@ export class RecettesPage {
 
   presentAddModal() {
     const modal = this.modalCtrl.create(ModalContentPage);
+    modal.onDidDismiss(() => {
+      this.RecipeApiProvider
+        .getAll()
+        .then(recettes => (this.recettes = recettes));
+    });
     modal.present();
   }
 
   Delete(item) {
-    this.RecipeApiProvider.delete(item)
+    this.RecipeApiProvider.delete(item);
+    this.RecipeApiProvider
+      .getAll()
+      .then(recettes => (this.recettes = recettes));
   }
 
   ionViewWillEnter() {

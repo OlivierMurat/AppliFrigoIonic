@@ -40,7 +40,8 @@ export class ListingApiProvider {
     this.storage.set(this.getKey(listing), JSON.stringify(listing));
   }
 
-  delete(listing: Listing) {
+  delete(listing: Listing, index) {
+    listing.ingredients.splice(index, 1);
     this.storage.remove(this.getKey(listing));
   }
 

@@ -18,6 +18,7 @@
 - @Clemios plutot back
 
 ## Voies d'amélioration
+- Implémenter la plannification
 - Intégrer la possibilité d'upload des images avec stockage en base64
 - Le code est un peu en mode quick and dirty
 

@@ -23,6 +23,10 @@ export class ListePage {
 
   presentAddModal() {
     const modal = this.modalCtrl.create(ModalListContentPage);
+    modal.onDidDismiss(() => {
+      this.ListingApiProvider
+      .getAll()
+      .then(liste => (this.listes = liste)); });
     modal.present();
   }
 
@@ -36,12 +40,16 @@ export class ListePage {
     this.ListingApiProvider.lessIngredient(liste, index);
   }
 
-  Delete(item) {
-    this.ListingApiProvider.delete(item);
+  Delete(liste, item) {
+    let index = liste.ingredients.indexOf(item)
+    this.ListingApiProvider.delete(liste, index);
   }
 
   DeleteListe(item) {
     this.ListingApiProvider.deleteListe(item);
+    this.ListingApiProvider
+      .getAll()
+      .then(liste => (this.listes = liste));
   }
 
   ionViewWillEnter() {
