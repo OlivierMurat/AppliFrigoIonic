@@ -95,5 +95,6 @@ export class ModalListContentPage {
   AddListe(name, ingredients) {
     let id = Math.random() + Math.random();
     this.ListingApiProvider.add({ id, name, ingredients });
+    this.viewCtrl.dismiss();
   }
 }
