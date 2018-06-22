@@ -21,11 +21,13 @@ export class RecettesDetailPage {
   }
 
   More(item) {
-    item.quantity += 1;
+    let index = this.recette.ingredients.indexOf(item)
+    this.RecipeApiProvider.moreIngredient(this.recette, index);
   }
 
   Less(item) {
-    item.quantity -= 1;
+    let index = this.recette.ingredients.indexOf(item)
+    this.RecipeApiProvider.lessIngredient(this.recette, index);
   }
 
   Delete(item) {

@@ -32,15 +32,15 @@ export class RecipeApiProvider {
     this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
   }
 
-  // lessIngredient(recipe: Recipe) {
-  //   recipe.quantity -= 1;
-  //   this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
-  // }
+  lessIngredient(recipe: Recipe, index) {
+    recipe.ingredients[index].quantity -= 1;
+    this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
+  }
 
-  // moreIngredient(recipe: Recipe) {
-  //   recipe.quantity += 1;
-  //   this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
-  // }
+  moreIngredient(recipe: Recipe, index) {
+    recipe.ingredients[index].quantity += 1;
+    this.storage.set(this.getKey(recipe), JSON.stringify(recipe));
+  }
 
   addIngredient(recipe: Recipe, ingredient: Ingredient) {
     recipe.ingredients.push(ingredient);
