@@ -93,11 +93,18 @@ export class ModalContentPage {
     this.aliments.push({ id, name, quantity, unit });
   }
 
-  AddRecipe({ name, description, ingredients }) {
+  AddRecipe(name, description, ingredients) {
     let id = Math.random() + Math.random();
     //let ingredients = this.aliments;
     // a faire avec la methode base64 pour up des images
-    let image = '';
+    var images = [
+      '../../assets/imgs/salade.png',
+      '../../assets/imgs/tarte.png',
+      '../../assets/imgs/pizza.png'
+    ];
+    var randomNumber = Math.floor(Math.random() * images.length);
+
+    let image = images[randomNumber];
     console.log(id, name, description, image, ingredients);
     this.RecipeApiProvider.add({ id, name, description, image, ingredients })
     this.viewCtrl.dismiss();
