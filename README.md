@@ -28,5 +28,6 @@ Rendez vous dans le repertoire du projet :
 git clone https://github.com/OlivierMurat/AppliFrigoIonic.git
 cd AppliFrigoIonic/
 ```
+* `npm install -g ionic` -- (seulement la première fois) installe les nodes_modules
 * `npm install` -- (seulement la première fois) installe les nodes_modules
 * `ionic serve` -- démarre l'app angular
